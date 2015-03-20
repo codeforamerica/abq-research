@@ -80,7 +80,7 @@ var combine = function(categories,stories,intros) {
 // Get the data
 // =====
 
-var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1UTmofeY8rPZvXdN_CNJXfFgPlexiMmlSs5W8oPhqFko/pubhtml';
+var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1ATAq4IxDoMZfUjSW8BOQCAGXRiACbO-E3OmpLOHLWAY/pubhtml';
 
 function init() {
   console.log('Ring, ring. Calling Google Sheets...')
