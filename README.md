@@ -1,19 +1,12 @@
-2014 Annual Report
+ABQ Research Report
 =======
 
-This branch holds the code that powers the 2014 Code for America Annual Report. This is in **alpha development phase**. We will be breaking things frequently.
+"Forked" from Code for America [2014 Annual Report](https://github.com/codeforamerica/annual)
 
 This version pulls all data out of a Google Sheet and builds it into HTML.
 
-Check out the report at this link: [codeforamerica.github.io/annual/](http://codeforamerica.github.io/annual/)
+Check out the report at this link: [codeforamerica.github.io/abq-research/](http://codeforamerica.github.io/abq-research/)
 Check out the Google Sheet that serves it [at this link](https://docs.google.com/a/codeforamerica.org/spreadsheets/d/1UTmofeY8rPZvXdN_CNJXfFgPlexiMmlSs5W8oPhqFko/edit#gid=179182240).
-
-# Past annual reports
-
-We built our annual report differently in the past. To see old versions of the report source code, you can visit these tags:
-
-* [`2013`](https://github.com/codeforamerica/annual/releases/tag/2013)
-* [`2012`](https://github.com/codeforamerica/annual/releases/tag/2012)
 
 # What it's built on
 
@@ -29,8 +22,8 @@ This is currently built using the following technologies:
 * Jekyll 2.5.3
 
 ```
-git clone https://github.com/codeforamerica/annual.git
-cd annual
+git clone https://github.com/codeforamerica/abq-research.git
+cd abq-research
 gem install jekyll
 jekyll serve --watch
 ```
@@ -39,7 +32,4 @@ Then open your web browser of choice and head over to the url printed that's pri
 
 # In the future
 
-* Generate our HTML server side, take that burden off the client
-* Cache the Google Sheet so we don't make an API call for every visitor
-* Create a way to "make your own story" - submit your own story card
-* Create a super simple path to Fork this, copy the Google Sheet, and start generating your own Annual Report
+* blah blah
