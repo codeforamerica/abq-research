@@ -5,7 +5,7 @@ ABQ Research Report
 
 This version pulls all data out of a Google Sheet and builds it into HTML.
 
-Check out the report at this link: [codeforamerica.github.io/abq-research/](http://codeforamerica.github.io/abq-research/)
+Check out the report at this link: [abq.codeforamerica.org](http://abq.codeforamerica.org/)
 Check out the Google Sheet that serves it [at this link](https://docs.google.com/a/codeforamerica.org/spreadsheets/d/1ATAq4IxDoMZfUjSW8BOQCAGXRiACbO-E3OmpLOHLWAY/edit#gid=179182240).
 
 # What it's built on
