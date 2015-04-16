@@ -3,25 +3,40 @@ title: Albuquerque Fellows February Research Report&nbsp;&nbsp;&nbsp;|&nbsp;&nbs
 layout: default
 ---
 
+<section class="stories stories--opener" id="<% data.opener.category %>">
+	<div class="intro">
+		<div class="container">
+		
+			<div class="intro__content">
+			</div>
+			<div class="intro__description">
+				{% include opener.html %}
+			</div>
+		
+		</div>
+	</div>
+</section>
+
+<section class="stories" id="<%= section.metadata.categoryId %>">
+	<div class="intro" style="<% if (section.metadata.color !== "") { %> background-color: <%= section.metadata.color %>; <% } %>">
+		<div class="container">
+		
+			<div class="intro__content">
+				<h1><%= section.metadata.headline %></h1>
+				{% include fellows.html %}
+			</div>
+		
+		</div><!-- end .container -->
+	</div><!-- end .intro -->
+</section>
+
+<ul>
+{% for page in site.themes.docs %}
+  <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+{% endfor %}
+</ul>
+
 <script type="text/x-template" id="js-story-template">
-
-<% if (data.opener) { %>
-  <section class="stories stories--opener" id="<% data.opener.category %>">
-    <div class="intro" style="<% if (data.opener.color !== "") { %> background-color: <%= data.opener.color %>; <% } %>">
-      <div class="container">
-
-        <div class="intro__content">
-          <h1><%= data.opener.headline %></h1>
-          <p class="sub-headline"><%= data.opener.category %></p>
-        </div>
-        <div class="intro__description">
-          <%= data.opener.description %>
-        </div>
-
-      </div><!-- end .container -->
-    </div><!-- end .intro -->
-  </section>
-<% } /* endif data.opener */ %>
 
 <% _.each(data.sections, function(section){ %>
   <section class="stories" id="<%= section.metadata.categoryId %>">

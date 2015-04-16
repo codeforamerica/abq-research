@@ -1,2 +1,4 @@
 #baseurl: '/abq-research'
 baseurl: ''
+collections:
+- themes
