@@ -13,10 +13,10 @@
 // =====
 
 $black: rgba(0,0,0,0.8);
-$red: #cf1b41;
+$red: #D64004;
 $green: #3e5641;
 $gray: #363537;
-$blue: #004b6a;
+$blue: #03588C;
 
 $background-tint: rgba(0,0,0,0.04);
 $dark-tint: $gray;
@@ -193,7 +193,7 @@ p {
 // =====
 
 .stories + .stories {
-  margin-top: 6em;
+  margin-top: -24px;
 }
 
 .stories--opener + .stories {
@@ -206,6 +206,8 @@ $padding: 2em;
   margin-top: $padding * 2;
   margin-bottom: $padding;
   @include span-columns(12 of 12);
+  
+  p {color: rgba(0, 0, 0, 0.8);}
 
   * + * {
     margin-top: 0.5em;

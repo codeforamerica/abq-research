@@ -1,16 +1,3 @@
-<div class="logo">
-  <a href="#">{{ page.title }}</a>
-</div>
-<nav>
-  <ul>
-    <li class="active"><a href="#">Introduction</a></li>
-    <li><a href="#">Showing What's Possible</a></li>
-    <li><a href="#">Changing Tools &amp; Platforms</a></li>
-    <li><a href="#">People &amp; Practices</a></li>
-    <li><a href="#">Deepening Impact</a></li>
-  </ul>
-</nav>
-
 <script type="text/x-template" id="js-nav-template">
   <div class="logo">
     <a href="#">{{ page.title }}</a>
@@ -19,10 +6,10 @@
     <ul>
       <li class="currently">Currently Reading:</li>
       <% if (data.opener) { %>
-        <li class="active"><a id="header-<%= data.opener.categoryId %>" href="#<%= data.opener.categoryId %>"><%= data.opener.category %></a></li>
+        <li class="active"><a id="header-<%= data.opener.categoryId %>" href="#<%= data.opener.categoryId %>"><%= data.opener.nav %></a></li>
       <% } %>
       <% _.each(data.sections, function(section){ %>
-        <li><a id="header-<%= section.metadata.categoryId %>" href="#<%= section.metadata.categoryId %>"><%= section.metadata.category %></a></li>
+        <li><a id="header-<%= section.metadata.categoryId %>" href="#<%= section.metadata.categoryId %>"><%= section.metadata.nav %></a></li>
       <% }); %>
       <li class="expand"></li>
     </ul>

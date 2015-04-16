@@ -1,5 +1,5 @@
 ---
-title: Team Albuquerque 2015 Report | Code for America
+title: Albuquerque Fellows February Research Report&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Code for America
 layout: default
 ---
 
@@ -11,8 +11,8 @@ layout: default
       <div class="container">
 
         <div class="intro__content">
-          <p><%= data.opener.category %></p>
           <h1><%= data.opener.headline %></h1>
+          <p class="sub-headline"><%= data.opener.category %></p>
         </div>
         <div class="intro__description">
           <%= data.opener.description %>
@@ -30,10 +30,10 @@ layout: default
       <div class="container">
 
         <div class="intro__content">
-          <p class="intro__content__overline">
+          <h1><%= section.metadata.headline %></h1>
+          <p  class="sub-headline" class="intro__content__overline">
             <%= section.metadata.category %>
           </p>
-          <h1><%= section.metadata.headline %></h1>
           <p><%= section.metadata.description %></p> 
         </div>
 
