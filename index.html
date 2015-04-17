@@ -50,7 +50,7 @@ layout: default
 	</section>
 
 
-{% for section in site.collections.priciples.docs %}
+{% for section in site.collections.principles.docs %}
 	<section class="stories">
 		<div class="intro" style="{% if section.color %}background-color: {{ section.color }}; {% endif %}">
 			<div class="container">
@@ -66,7 +66,7 @@ layout: default
 	</section>
 {% endfor %}
 
-<!-- PRICIPLES end -->
+<!-- PRINCIPLES end -->
 <!-- THEMES start -->
 
 <p class="sub-headline"></p>
@@ -97,6 +97,78 @@ layout: default
 				</div>
 			</div>
 		</div>
+		
+		{% if section.storycards %}
+			<div class="container">
+				STORIES HERE
+				{% for story in site.data.storycards[section.storycards] %}
+					{{ story.description }}
+					<article class="story">
+						<div class="story__image" style="background-image:url('{{ site.baseurl }}{{ story.image-link }}');"></div>
+			
+						<div class="story__body">
+							<div class="story__body__header">
+								<ul>
+									<li class="story__body__header__link--facebook">
+										<a href="#">Share on Facebook</a>
+									</li>
+									<li class="story__body__header__link--twitter">
+										<a href="#">Share on Twitter</a>
+									</li>
+									<li class="story__body__header__link--information">
+										<a href="#">More Information</a>
+									</li>
+								</ul>
+							</div>
+			            
+							<div class="story__body__content">
+								<div class="story__body__content__opener">
+									<p><strong><%= story['category'] %></strong></p>
+									<h2>{{ story.description }}</h2>
+								</div>
+								
+								<div class="story__body__content__quote">
+									<p>{{ story.quote }}</p>
+									<p class="story__body__content__quote__credit">&mdash; <%= story['quote-attribution'] %></p>
+								</div>
+
+								{% if story.metrics %}
+								<ul class="story__body__content__metrics">
+									{% for metric in story.metrics %}
+									<li>
+										<p class="story__body__content__metrics__number">{{ metric.number }}</p>
+										<p class="story__body__content__body__metrics__description">{{ metric.description }}</p>
+									</li>
+									{% endfor %}
+								</ul>
+								{% endif %}
+			
+			              <ul class="story__body__content__links">
+			                <li class="story__body__content__link--<%= story['link-1-type'] %>">
+			                  <a href="<%= story['link-1-url'] %>">
+			                    <p class="story__body__content__link--header"><%= story['link-1-header'] %></p>
+			                    <p class="story__body__content__link--link"><%= story['link-1-description'] %></p>
+			                  </a>
+			                </li>
+			                <li class="story__body__content__link--<%= story['link-2-type'] %>">
+			                  <a href="<%= story['link-2-url'] %>">
+			                    <p class="story__body__content__link--header"><%= story['link-2-header'] %></p>
+			                    <p class="story__body__content__link--link"><%= story['link-2-description'] %></p>
+			                  </a>
+			                </li>
+			                <li class="story__body__content__link--<%= story['link-3-type'] %>">
+			                  <a href="<%= story['link-3-url'] %>">
+			                    <p class="story__body__content__link--header"><%= story['link-3-header'] %></p>
+			                    <p class="story__body__content__link--link"><%= story['link-3-description'] %></p>
+			                  </a>
+			                </li>
+			              </ul>
+			            </div><!-- end .story__body__content -->
+			          </div><!-- end .story__body -->
+			        </article><!-- end .story -->
+				{% endfor %}
+			</div>
+		{% endif %}
 	</section>
 {% endfor %}
 
