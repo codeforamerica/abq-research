@@ -103,9 +103,8 @@ layout: default
 		
 		{% if section.storycards %}
 			<div class="container">
-				STORIES HERE
-				{% for story in site.data.storycards[section.storycards] %}
-					{{ story.description }}
+				{% for storyobject in site.data.storycards[section.storycards] %}
+					{% assign story = storyobject[1] %}
 					<article class="story">
 						<div class="story__image" style="background-image:url('{{ site.baseurl }}{{ story.image-link }}');"></div>
 			
@@ -126,13 +125,12 @@ layout: default
 			            
 							<div class="story__body__content">
 								<div class="story__body__content__opener">
-									<p><strong><%= story['category'] %></strong></p>
 									<h2>{{ story.description }}</h2>
 								</div>
 								
 								<div class="story__body__content__quote">
 									<p>{{ story.quote }}</p>
-									<p class="story__body__content__quote__credit">&mdash; <%= story['quote-attribution'] %></p>
+									<p class="story__body__content__quote__credit">&mdash; {{ story.quote-attribution }}</p>
 								</div>
 
 								{% if story.metrics %}
@@ -145,30 +143,22 @@ layout: default
 									{% endfor %}
 								</ul>
 								{% endif %}
-			
-			              <ul class="story__body__content__links">
-			                <li class="story__body__content__link--<%= story['link-1-type'] %>">
-			                  <a href="<%= story['link-1-url'] %>">
-			                    <p class="story__body__content__link--header"><%= story['link-1-header'] %></p>
-			                    <p class="story__body__content__link--link"><%= story['link-1-description'] %></p>
-			                  </a>
-			                </li>
-			                <li class="story__body__content__link--<%= story['link-2-type'] %>">
-			                  <a href="<%= story['link-2-url'] %>">
-			                    <p class="story__body__content__link--header"><%= story['link-2-header'] %></p>
-			                    <p class="story__body__content__link--link"><%= story['link-2-description'] %></p>
-			                  </a>
-			                </li>
-			                <li class="story__body__content__link--<%= story['link-3-type'] %>">
-			                  <a href="<%= story['link-3-url'] %>">
-			                    <p class="story__body__content__link--header"><%= story['link-3-header'] %></p>
-			                    <p class="story__body__content__link--link"><%= story['link-3-description'] %></p>
-			                  </a>
-			                </li>
-			              </ul>
-			            </div><!-- end .story__body__content -->
-			          </div><!-- end .story__body -->
-			        </article><!-- end .story -->
+
+								{% if story.links %}
+								<ul class="story__body__content__links">
+									{% for link in story.links %}
+									<li class="story__body__content__link--<%= story['link-1-type'] %>">
+										<a href="{{ link.url }}">
+											<p class="story__body__content__link--header">{{ link.header }}</p>
+											<p class="story__body__content__link--link">{{ link.description }}</p>
+										</a>
+									</li>
+									{% endfor %}
+								</ul>
+								{% endif %}
+							</div><!-- end .story__body__content -->
+						</div><!-- end .story__body -->
+					</article><!-- end .story -->
 				{% endfor %}
 			</div>
 		{% endif %}
@@ -192,100 +182,3 @@ layout: default
 		</div>
 	</section>
 {% endfor %}
-
-<script type="text/x-template" id="js-story-template">
-
-<% _.each(data.sections, function(section){ %>
-  <section class="stories" id="<%= section.metadata.categoryId %>">
-
-    <div class="intro" style="<% if (section.metadata.color !== "") { %> background-color: <%= section.metadata.color %>; <% } %>">
-      <div class="container">
-
-        <div class="intro__content">
-          <h1><%= section.metadata.headline %></h1>
-          <p  class="sub-headline" class="intro__content__overline">
-            <%= section.metadata.category %>
-          </p>
-          <p><%= section.metadata.description %></p> 
-        </div>
-
-      </div><!-- end .container -->
-    </div><!-- end .intro -->
-
-    <div class="container">
-      <% _.each(section.stories, function(story){ %>
-        <article class="story">
-          <div class="story__image" style="background-image:url('{{ site.baseurl }}<%= story['image-link'] %>');">
-          </div>
-
-          <div class="story__body">
-            <div class="story__body__header">
-              <ul>
-                <li class="story__body__header__link--facebook">
-                  <a href="#">Share on Facebook</a>
-                </li>
-                <li class="story__body__header__link--twitter">
-                  <a href="#">Share on Twitter</a>
-                </li>
-                <li class="story__body__header__link--information">
-                  <a href="#">More Information</a>
-                </li>
-              </ul>
-            </div>
-            
-            <div class="story__body__content">
-              <div class="story__body__content__opener">
-                <p><strong><%= story['category'] %></strong></p>
-                <h2><%= story['description'] %></h2>
-              </div>
-
-              <div class="story__body__content__quote">
-                <p><%= story['quote'] %></p>
-                <p class="story__body__content__quote__credit">&mdash; <%= story['quote-attribution'] %></p>
-              </div>
-
-              <ul class="story__body__content__metrics">
-                <li>
-                  <p class="story__body__content__metrics__number"><%= story['metric-1-number'] %></p>
-                  <p class="story__body__content__body__metrics__description"><%= story['metric-1-description'] %></p>
-                </li>
-                <li>
-                  <p class="story__body__content__metrics__number"><%= story['metric-2-number'] %></p>
-                  <p class="story__body__content__body__metrics__description"><%= story['metric-2-description'] %></p>
-                </li>
-                <li>
-                  <p class="story__body__content__metrics__number"><%= story['metric-3-number'] %></p>
-                  <p class="story__body__content__body__metrics__description"><%= story['metric-3-description'] %></p>
-                </li>
-              </ul>
-
-              <ul class="story__body__content__links">
-                <li class="story__body__content__link--<%= story['link-1-type'] %>">
-                  <a href="<%= story['link-1-url'] %>">
-                    <p class="story__body__content__link--header"><%= story['link-1-header'] %></p>
-                    <p class="story__body__content__link--link"><%= story['link-1-description'] %></p>
-                  </a>
-                </li>
-                <li class="story__body__content__link--<%= story['link-2-type'] %>">
-                  <a href="<%= story['link-2-url'] %>">
-                    <p class="story__body__content__link--header"><%= story['link-2-header'] %></p>
-                    <p class="story__body__content__link--link"><%= story['link-2-description'] %></p>
-                  </a>
-                </li>
-                <li class="story__body__content__link--<%= story['link-3-type'] %>">
-                  <a href="<%= story['link-3-url'] %>">
-                    <p class="story__body__content__link--header"><%= story['link-3-header'] %></p>
-                    <p class="story__body__content__link--link"><%= story['link-3-description'] %></p>
-                  </a>
-                </li>
-              </ul>
-            </div><!-- end .story__body__content -->
-          </div><!-- end .story__body -->
-        </article><!-- end .story -->
-      <% }); /* end _.each section.stories */ %>
-    </section>
-    <% }); /* end _.each sections */ %>
-  </div><!-- end .container -->
-
-</script>
-
