@@ -26,7 +26,90 @@ layout: default
 					<p class="sub-headline" class="intro__content__overline">
 						{{ section.subtitle }}
 					</p>
-					<div>{{ section.content }}</p> 
+					<div>{{ section.content }}</div> 
+				</div>
+			</div>
+		</div>
+	</section>
+{% endfor %}
+
+<!-- PRICIPLES start -->
+
+<p class="sub-headline"></p>
+<section class="stories">
+		<div class="intro" style="background-color: #03588C;">
+			<div class="container">
+				<div class="intro__content">
+					<h1>DESIGN PRINCIPLES</h1>
+					<p class="sub-headline" class="intro__content__overline">
+						There are two principles that we will align with at every turn of the design process.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+{% for section in site.collections.priciples.docs %}
+	<section class="stories">
+		<div class="intro" style="{% if section.color %}background-color: {{ section.color }}; {% endif %}">
+			<div class="container">
+				<div class="intro__content">
+					<h1>{{ section.title }}</h1>
+					<p class="sub-headline" class="intro__content__overline">
+						{{ section.subtitle }}
+					</p>
+					<div>{{ section.content }}</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endfor %}
+
+<!-- PRICIPLES end -->
+<!-- THEMES start -->
+
+<p class="sub-headline"></p>
+<section class="stories">
+		<div class="intro" style="background-color: #03588C;">
+			<div class="container">
+				<div class="intro__content">
+					<h1>DESIGN THEMES</h1>
+					<p class="sub-headline" class="intro__content__overline">
+						There are four themes that we will use as containers in which to decode the issues. Workforce Development, Education, Poverty, and Inclusion.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+{% for section in site.collections.themes.docs %}
+	<section class="stories">
+		<div class="intro" style="{% if section.color %}background-color: {{ section.color }}; {% endif %}">
+			<div class="container">
+				<div class="intro__content">
+					<h1>{{ section.title }}</h1>
+					<p class="sub-headline" class="intro__content__overline">
+						{{ section.subtitle }}
+					</p>
+					<div>{{ section.content }}</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endfor %}
+
+{% for section in site.collections.close.docs %}
+	<section class="stories">
+		<div class="intro" style="{% if section.color %}background-color: {{ section.color }}; {% endif %}">
+			<div class="container">
+				<div class="intro__content">
+					<h1>{{ section.title }}</h1>
+					<p class="sub-headline" class="intro__content__overline">
+						{{ section.subtitle }}
+					</p>
+					<div>{{ section.content }}</div>
 				</div>
 			</div>
 		</div>
