@@ -17,24 +17,21 @@ layout: default
 	</div>
 </section>
 
-<section class="stories" id="<%= section.metadata.categoryId %>">
-	<div class="intro" style="<% if (section.metadata.color !== "") { %> background-color: <%= section.metadata.color %>; <% } %>">
-		<div class="container">
-		
-			<div class="intro__content">
-				<h1><%= section.metadata.headline %></h1>
-				{% include fellows.html %}
+{% for section in site.collections.sections.docs %}
+	<section class="stories">
+		<div class="intro" style="{% if section.color %}background-color: {{ section.color }}; {% endif %}">
+			<div class="container">
+				<div class="intro__content">
+					<h1>{{ section.title }}</h1>
+					<p class="sub-headline" class="intro__content__overline">
+						{{ section.subtitle }}
+					</p>
+					<div>{{ section.content }}</p> 
+				</div>
 			</div>
-		
-		</div><!-- end .container -->
-	</div><!-- end .intro -->
-</section>
-
-<ul>
-{% for page in site.themes.docs %}
-  <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+		</div>
+	</section>
 {% endfor %}
-</ul>
 
 <script type="text/x-template" id="js-story-template">
 
