@@ -2,3 +2,5 @@
 baseurl: ''
 collections:
 - sections
+- priciples
+- themes
