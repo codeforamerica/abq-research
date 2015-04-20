@@ -1,0 +1,41 @@
+{
+	"description": "John Mierzwa started bootcamp for coders. Knew of need before coming to ABQ. Good cause but immense issues with scaling and tracking impact.",
+	"image-link": "/assets/images/deepening-impact/courtbot.jpg",
+	"photo-credit": "",
+	"quote": "This is really going to help give a much clearer picture of all the data in all our various systems so that we can be more efficient in trying to address some of these properties.",
+	"quote-attribution": "Tom Modica, Assistant City Manager, Long Beach, California",
+	"metrics": [
+		{
+			"number": "10%",
+			"description": "of addresses in Long Beach accounted for 52% of emergency medical calls in 2013"
+		},
+		{
+			"number": "86",
+			"description": "Interviews conducted by the Long Beach team in February"
+		},
+		{
+			"number": "38",
+			"description": "City staff trained to use AddressIQ"
+		}
+	],
+	"links": [
+		{
+			"type": "news",
+			"header": "Read the news",
+			"description": "Code for America develops app to help Long Beach reduce 911 medical calls",
+			"url": "http://www.presstelegram.com/technology/20141031/code-for-america-develops-app-to-help-long-beach-reduce-911-medical-calls"
+		},
+		{
+			"type": "video",
+			"header": "Watch the video",
+			"description": "2014 Summit Spotlight: Long Beach",
+			"url": "https://youtu.be/TxifmeeFT2s"
+		},
+		{
+			"type": "github",
+			"header": "Contribute on GitHub",
+			"description": "Check out the code behind AddressIQ",
+			"url": "https://GitHub.com/codeforamerica/address-iq"
+		}
+	]
+}
