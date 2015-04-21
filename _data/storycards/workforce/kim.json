@@ -1,0 +1,37 @@
+{
+	"description": "African-American woman born and raised in Albuquerque. She has spent the majority of her working career as a nurse. After going to the New Mexico Workforce Connection Center, she is now currently pursuing a one month nursing certification program.",
+	"image-link": "",
+	"photo-credit": "",
+	"quote": "All you gotta do is claim it. Claim it and it's yours. And a lot of people don't. They're just like, \u2018Oh, I don't think I can do that job\u2019 so they bypass it.",
+	"quote-attribution": "Local Resident, Albuquerque, NM",
+	"metrics": [
+		{
+			"number": "7",
+			"description": "months previously without work"
+		},
+		{
+			"number": "$700",
+			"description": "price tag of nursing certification"
+		}
+	],
+	"links": [
+		{
+			"type": "news",
+			"header": "Job application process",
+			"description": "New Mexico Workforce Connection",
+			"url": "https://www.jobs.state.nm.us"
+		},
+		{
+			"type": "reference",
+			"header": "See the numbers",
+			"description": "Occupational Wages for Job Seekers",
+			"url": "http://www.dws.state.nm.us/Portals/0/DM/LMI/WageSheet2014_Web_ABQMSA-CentralWIA.pdf"
+		},
+		{
+			"type": "reference",
+			"header": "Get skills",
+			"description": "TalentABQ Skill Up Centers",
+			"url": "https://talentabq.org/skill-up/"
+		}
+	]
+}
